@@ -1,0 +1,110 @@
+@import "src/styles/mixins";
+
+.builder {
+  --z-index-drag-handle: 1;
+  --z-index-actions: calc(var(--z-index-drag-handle) + 1);
+  --z-index-actions-modal: calc(var(--z-index-actions) + 1);
+
+  display: flex;
+  justify-content: space-between;
+  min-width: calc(21cm + 56px);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &.editing {
+    min-width: calc(21cm + 56px + 200px)
+  }
+}
+
+.preview {
+  padding: 19mm;
+  margin: 20px 0;
+  border-radius: 10px;
+  font-size: 12px;
+  overflow: auto;
+  box-shadow: 1px 1px 5px 1px lightgrey, 0 0 0 1px lightgrey;
+  width: 21cm;
+
+  @media screen and (max-width: calc(21cm + 56px)) {
+    &:not(.editing *) {
+      margin: 0;
+      border-radius: 0;
+      border: 0 none;
+      box-shadow: none;
+    }
+  }
+}
+
+.elementContainer {
+  border-style: solid;
+  border-color: transparent; // to prevent .actions move out of the elementContainer, must be a chrome bug
+  border-width: 1px 0; // to keep the preview exactly same as print
+  position: relative;
+  //margin-bottom: 8px;
+
+  .actions:not(&:hover *) {
+    display: none;
+  }
+}
+
+.element {
+
+}
+
+.droppable {
+  transition: border 0.2s ease; // use theme.transition.create instead
+  border: 0 dashed transparent;
+
+  &.isDragging {
+    border: 2px dashed lightgray;
+  }
+
+  &.empty {
+    min-height: 100px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 25px;
+
+    &:after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      content: attr(data-empty-content);
+      line-height: 100px;
+    }
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 19mm;
+  }
+
+  .builder {
+    min-width: unset;
+  }
+
+  .preview {
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0;
+    width: unset;
+  }
+
+  .droppable {
+    border: none;
+  }
+
+  .elementContainer {
+    break-inside: avoid; // not working since parents have display: flex
+
+    &:last-child {
+      margin-bottom: 0;
+      break-inside: avoid;
+      border: none;
+    }
+  }
+}

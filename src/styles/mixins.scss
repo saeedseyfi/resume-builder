@@ -1,0 +1,19 @@
+@mixin ltr {
+  //[dir=ltr] & {
+  [lang]:not([lang=fa]) & {
+    @content;
+  }
+}
+
+@mixin rtl {
+  //[dir=rtl] & {
+  [lang=fa] & {
+    @content;
+  }
+}
+
+@mixin noPrint {
+  @media print {
+    display: none;
+  }
+}

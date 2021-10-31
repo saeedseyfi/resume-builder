@@ -1,3 +1,16 @@
+@import "fonts.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+html {
+  /* TODO move to mui theme */
+  --color-dark: #384347;
+  --color-body: #444;
+  --color-accent: #008CFF;
+  --color-lightgray: #E2E7E8;
+
+  font-size: 12px;
+}
+
 html,
 body {
   padding: 0;

@@ -1,0 +1,35 @@
+@import "src/styles/mixins";
+
+.editItem {
+  background: #f5f5f5;
+  border-radius: 5px;
+  padding: 5px;
+  position: relative;
+  margin-bottom: 19px;
+  border: 1px solid lightgray;
+}
+
+.itemField {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.removeItem {
+  background: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+
+  @include ltr {
+    float: right;
+  }
+
+  @include rtl {
+    float: left;
+  }
+}
+
+.addItem {
+  margin: 20px 0;
+}

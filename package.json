@@ -4,19 +4,43 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "type": "tsc",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "11.1.2",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.5",
+    "@mui/material": "^5.0.6",
+    "formik": "^2.2.9",
+    "next": "^12.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-beautiful-dnd": "^13.1.0",
+    "react-dom": "17.0.2",
+    "react-markdown": "^7.1.0",
+    "sass": "^1.43.4",
+    "stylis": "^4.0.10",
+    "stylis-plugin-rtl": "^2.1.1",
+    "tmpl": "^1.0.5",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@types/react": "17.0.32",
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2",
+    "@types/react": "^17.0.33",
+    "@types/react-beautiful-dnd": "^13.1.2",
+    "@types/tmpl": "^1.0.0",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^12.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-react-hooks": "^4.2.1-alpha-fd5e01c2e-20210913",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "prettier": "^2.4.1",
     "typescript": "4.4.4"
   }
 }

@@ -1,0 +1,13 @@
+@import "src/styles/mixins";
+
+.actions .action {
+  @include noPrint;
+
+  font-size: 10px;
+  padding: 0 5px;
+  min-width: 0;
+
+  &, &:hover {
+    background: white;
+  }
+}
