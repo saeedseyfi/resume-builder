@@ -29,6 +29,10 @@ const MyApp: React.FC<AppProps> = ({
       <Head>
         <meta content="initial-scale=1, width=device-width" name="viewport" />
         <title>Resume Builder</title>
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
       </Head>
 
       <EmotionCacheProvider value={emotionCache}>
